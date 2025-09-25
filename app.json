@@ -1,0 +1,47 @@
+{
+  "name": "ManifestLink Backend",
+  "description": "PHP backend for ManifestLink QR-enabled passenger manifest system",
+  "keywords": ["php", "manifest", "qr-code", "maritime", "passenger-management"],
+  "website": "https://manifestlink.web.app",
+  "repository": "https://github.com/yourusername/manifestlink",
+  "success_url": "/",
+  "env": {
+    "DB_HOST": {
+      "description": "Database host URL",
+      "required": true
+    },
+    "DB_PORT": {
+      "description": "Database port",
+      "value": "3306"
+    },
+    "DB_NAME": {
+      "description": "Database name",
+      "required": true
+    },
+    "DB_USER": {
+      "description": "Database username",
+      "required": true
+    },
+    "DB_PASSWORD": {
+      "description": "Database password",
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:hobby-dev",
+      "as": "DATABASE"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    }
+  ]
+}

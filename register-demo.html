@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - ManifestLink</title>
+    <meta name="description" content="Register for ManifestLink QR-enabled passenger manifest system">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Improved CSS -->
+    <link rel="stylesheet" href="css/improved-styles.css">
+    
+    <style>
+        .registration-demo {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 120px 2rem 80px;
+        }
+        
+        .demo-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .demo-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .demo-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        
+        .demo-subtitle {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .demo-features {
+            text-align: left;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+        
+        .demo-features h3 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .demo-features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .demo-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: #4b5563;
+        }
+        
+        .demo-features li i {
+            color: #10b981;
+            width: 20px;
+        }
+        
+        .demo-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .demo-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .demo-button.primary {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
+        }
+        
+        .demo-button.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+        }
+        
+        .demo-button.secondary {
+            background: transparent;
+            color: #2563eb;
+            border-color: #2563eb;
+        }
+        
+        .demo-button.secondary:hover {
+            background: #2563eb;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .coming-soon-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-container {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            .demo-buttons {
+                flex-direction: column;
+            }
+            
+            .demo-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.png" alt="ManifestLink Logo" class="logo-img">
+                <span>ManifestLink</span>
+            </a>
+            
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="index.html#home" class="nav-link" role="menuitem">Home</a></li>
+                <li role="none"><a href="index.html#features" class="nav-link" role="menuitem">Features</a></li>
+                <li role="none"><a href="index.html#guide" class="nav-link" role="menuitem">Guide</a></li>
+                <li role="none"><a href="index.html#about" class="nav-link" role="menuitem">About</a></li>
+                <li role="none"><a href="index.html#contact" class="nav-link" role="menuitem">Contact</a></li>
+                <li role="none"><a href="register-demo.html" class="nav-link cta-button active" role="menuitem">Register Now</a></li>
+            </ul>
+            
+            <div class="hamburger" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Demo Section -->
+    <section class="registration-demo">
+        <div class="demo-container">
+            <div class="demo-icon">
+                <i class="fas fa-rocket"></i>
+            </div>
+            
+            <div class="coming-soon-badge">
+                🚀 Demo Version
+            </div>
+            
+            <h1 class="demo-title">Registration Coming Soon!</h1>
+            <p class="demo-subtitle">
+                The full registration system with QR code generation is currently being developed. 
+                This demo shows you what the registration process will look like.
+            </p>
+            
+            <div class="demo-features">
+                <h3>What you'll be able to do:</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Register with your personal information</li>
+                    <li><i class="fas fa-check"></i> Receive a unique QR code</li>
+                    <li><i class="fas fa-check"></i> Download your QR code as an image</li>
+                    <li><i class="fas fa-check"></i> Use QR code for quick port check-in</li>
+                    <li><i class="fas fa-check"></i> Track your travel history</li>
+                    <li><i class="fas fa-check"></i> Secure email verification</li>
+                </ul>
+            </div>
+            
+            <div class="demo-buttons">
+                <a href="index.html" class="demo-button primary">
+                    <i class="fas fa-home"></i>
+                    Back to Home
+                </a>
+                <a href="index.html#contact" class="demo-button secondary">
+                    <i class="fas fa-envelope"></i>
+                    Contact Us
+                </a>
+            </div>
+            
+            <p style="margin-top: 2rem; color: #9ca3af; font-size: 0.9rem;">
+                <i class="fas fa-info-circle"></i>
+                Full registration system will be available once the backend is deployed.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="index.html" class="footer-logo">
+                <img src="logo.png" alt="ManifestLink Logo" class="logo-img">
+                ManifestLink
+            </a>
+            <p>Automated QR-Enabled Passenger Manifest System</p>
+            <p>Designed for Guimaras Port Authority</p>
+            <p>&copy; 2024 ManifestLink. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Navigation JavaScript -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>
