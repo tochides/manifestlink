@@ -15,7 +15,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Improved CSS -->
+    <!-- Merged CSS -->
     <link rel="stylesheet" href="improved-styles.css">
 </head>
 <body>
@@ -173,11 +173,26 @@
         </div>
     </footer>
 
-    <!-- Improved Navigation JavaScript -->
-    <script src="js/navigation.js"></script>
+    <!-- Inline Navigation JavaScript (no external js folder needed) -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('.nav-menu');
+      const body = document.body;
+      if (!hamburger || !navMenu) return;
+      hamburger.addEventListener('click', function () {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      });
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+          body.style.overflow = '';
+        });
+      });
+    });
+    </script>
 </body>
 </html>
-
-
-
-
