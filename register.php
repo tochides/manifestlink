@@ -158,6 +158,20 @@ if (isset($_GET['email']) && !empty($_GET['email'])) {
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/register.css?v=<?php echo time(); ?>">
     
+    <!-- Mobile overflow fixes and safer responsive overrides -->
+    <style>
+        html, body { max-width: 100%; overflow-x: hidden; }
+        img, video, canvas, svg { max-width: 100%; height: auto; }
+        .container { max-width: 100%; }
+        .registration-card, .registration-form-container { box-sizing: border-box; }
+        /* Ensure mobile menu does not create horizontal scroll */
+        @media (max-width: 768px) {
+            .nav-menu { right: -100%; left: auto; }
+            .nav-menu.active { right: 0; }
+            body { overflow-x: hidden; }
+        }
+    </style>
+    
     <!-- Custom JavaScript -->
     <script src="script.js?v=<?php echo time(); ?>"></script>
     
