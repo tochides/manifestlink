@@ -15,7 +15,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Merged CSS -->
+    <!-- Site CSS -->
     <link rel="stylesheet" href="improved-styles.css">
 </head>
 <body>
@@ -35,11 +35,19 @@
                 <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
                 <li role="none"><a href="https://manifestlink-production.up.railway.app/register.php" class="nav-link cta-button" role="menuitem">Register Now</a></li>
             </ul>
-            
-            <div class="hamburger" aria-label="Toggle navigation menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+
+            <div class="nav-right">
+                <div class="language-switcher">
+                    <button class="lang-btn" id="langToggle" aria-label="Switch Language">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">EN</span>
+                    </button>
+                </div>
+                <div class="hamburger" aria-label="Toggle navigation menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -192,6 +200,23 @@
           body.style.overflow = '';
         });
       });
+      // Simple language toggle to mirror register page button label
+      const langBtn = document.getElementById('langToggle');
+      const currentLangEl = document.getElementById('currentLang');
+      const getLang = () => localStorage.getItem('language') || 'en';
+      const setLang = (l) => localStorage.setItem('language', l);
+      const applyLang = () => {
+        const l = getLang();
+        if (currentLangEl) currentLangEl.textContent = l.toUpperCase();
+      };
+      applyLang();
+      if (langBtn) {
+        langBtn.addEventListener('click', () => {
+          const next = getLang() === 'en' ? 'fil' : 'en';
+          setLang(next);
+          applyLang();
+        });
+      }
     });
     </script>
 </body>
