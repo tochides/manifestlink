@@ -1,0 +1,8 @@
+/* Merged stylesheet for ManifestLink
+   Combines base styles (styles.css) and improved styles (css/improved-styles.css)
+   Keep import order: base first, overrides second. */
+
+@import url('/styles.css');
+@import url('/css/improved-styles.css');
+
+
