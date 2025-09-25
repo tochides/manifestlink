@@ -1,10 +1,31 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-include 'connect.php'; // Ensure this connects $conn to your database
-include 'phpqrcode/qrlib.php'; // Add this line
-session_start();
+// Enable verbose errors in dev only
+$appEnv = getenv('APP_ENV') ?: 'dev';
+if (strtolower($appEnv) === 'production') {
+    ini_set('display_errors', 0);
+    ini_set('display_startup_errors', 0);
+    error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+} else {
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+}
+
+// Start session before any output
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// DB connection
+require_once __DIR__ . '/connect.php';
+
+// QR library - use absolute path and guard if missing to avoid header warnings
+$qrLibPath = __DIR__ . '/phpqrcode/qrlib.php';
+if (file_exists($qrLibPath)) {
+    require_once $qrLibPath;
+} else {
+    error_log('QR library not found at ' . $qrLibPath);
+}
 
 $message = '';
 $existingUser = null;
