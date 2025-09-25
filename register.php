@@ -156,20 +156,11 @@ if (isset($_GET['email']) && !empty($_GET['email'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Shared site CSS (same theme as index) -->
-    <link rel="stylesheet" href="app.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="improved-styles.css?v=<?php echo time(); ?>">
     
-    <!-- Mobile overflow fixes and safer responsive overrides -->
+    <!-- Minimal mobile overflow guard -->
     <style>
         html, body { max-width: 100%; overflow-x: hidden; }
-        img, video, canvas, svg { max-width: 100%; height: auto; }
-        .container { max-width: 100%; }
-        .registration-card, .registration-form-container { box-sizing: border-box; }
-        /* Ensure mobile menu does not create horizontal scroll */
-        @media (max-width: 768px) {
-            .nav-menu { right: -100%; left: auto; }
-            .nav-menu.active { right: 0; }
-            body { overflow-x: hidden; }
-        }
     </style>
     
     <!-- Custom JavaScript -->
