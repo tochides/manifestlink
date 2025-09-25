@@ -1,11 +1,21 @@
 [phases.setup]
-nixPkgs = ["php81", "php81Packages.composer"]
+# PHP 8.1 + Composer + extensions
+nixPkgs = [
+  "php81",
+  "php81Packages.composer",
+  "php81Extensions.gd",
+  "php81Extensions.mysqli"
+]
 
 [phases.install]
-cmds = ["composer install --no-dev --optimize-autoloader"]
+cmds = [
+  "composer install --no-dev --prefer-dist --no-progress --no-interaction"
+]
 
+# Optional, but keeps logs cleaner
 [phases.build]
-cmds = ["echo 'Build phase complete'"]
+cmds = ["echo Build complete"]
 
 [start]
+# Serve from project root; change -t if you have a public/ dir
 cmd = "php -S 0.0.0.0:$PORT"
