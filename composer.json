@@ -5,7 +5,7 @@
     "keywords": ["php", "manifest", "qr-code", "maritime", "passenger-management"],
     "license": "MIT",
     "require": {
-        "php": "^8.0",
+        "php": "^8.1",
         "ext-mysqli": "*",
         "ext-gd": "*",
         "ext-json": "*",
@@ -31,3 +31,4 @@
     "minimum-stability": "stable",
     "prefer-stable": true
 }
+
