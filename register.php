@@ -155,8 +155,8 @@ if (isset($_GET['email']) && !empty($_GET['email'])) {
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/register.css?v=<?php echo time(); ?>">
+    <!-- Shared site CSS (same theme as index) -->
+    <link rel="stylesheet" href="app.css?v=<?php echo time(); ?>">
     
     <!-- Mobile overflow fixes and safer responsive overrides -->
     <style>
