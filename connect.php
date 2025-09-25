@@ -16,6 +16,7 @@ $dbname    = read_env('DB_NAME', read_env('MYSQLDATABASE', 'manifestlink'));
 
 // Port: prefer DB_PORT, then MYSQLPORT, default 3306 (not 3307)
 $db_port   = (int) read_env('DB_PORT', read_env('MYSQLPORT', 3306));
+if ($db_port <= 0) { $db_port = 3306; }
 
 // Also allow MYSQL_PUBLIC_URL/MYSQL_URL if present
 $url = read_env('MYSQL_PUBLIC_URL', read_env('MYSQL_URL'));
@@ -24,8 +25,13 @@ if ($url && ($parts = parse_url($url))) {
     $username   = $parts['user'] ?? $username;
     $password   = $parts['pass'] ?? $password;
     $dbname     = isset($parts['path']) ? ltrim($parts['path'], '/') : $dbname;
-    $db_port    = isset($parts['port']) ? (int)$parts['port'] : $db_port;
+    if (isset($parts['port']) && (int)$parts['port'] > 0) {
+        $db_port = (int)$parts['port'];
+    }
 }
+
+// Final safety: ensure we never pass 0 as port
+if ($db_port <= 0) { $db_port = 3306; }
 
 // Create connection
 // Optional diagnostic: visit any PHP page that includes this file with ?diag=1
